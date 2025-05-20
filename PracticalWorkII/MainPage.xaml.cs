@@ -2,23 +2,32 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+    private void OnLoginClicked(object sender, EventArgs e)
+    {
+        string tempUser = UsernameEntry.Text;
+        string tempPass = PasswordEntry.Text;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+        if (tempUser == SessionData.Username && tempPass == SessionData.Password)
+        {
+            DisplayAlert("Success", "Logged in", "OK");
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+            Navigation.PushAsync(new ConversorPage());
+        }
+        else
+        {
+            DisplayAlert("Error", "Incorrect user or passwords", "Try again");
+        }
+    }
+    
+    private void OnGoToRegisterClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new RegisterPage());
+    }
 }
 
