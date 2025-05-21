@@ -16,11 +16,14 @@
             <Label
                 x:Name="InputDisplay"
                 Text=""
+                TextColor="Black"
                 FontSize="24"
-                BackgroundColor="LightGray"
+                BackgroundColor="LightGrey"
                 HeightRequest="50"
                 VerticalTextAlignment="Center"
                 Padding="10" />
+
+            <Entry x:Name="BitSizeEntry" Placeholder="Optional: Bit size" Keyboard="Numeric"/>
 
             <Grid RowSpacing="10" ColumnSpacing="10">
                 <Grid.RowDefinitions>
@@ -75,7 +78,7 @@
 
             </Grid>
 
-            <Entry x:Name="BitSizeEntry" Placeholder="Optional: Bit size for 2's complement" Keyboard="Numeric"/>
+
 
 
         </VerticalStackLayout>

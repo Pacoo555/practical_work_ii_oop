@@ -11,6 +11,14 @@ namespace PracticalWorkII
             InitializeComponent();
         }
 
+        Converter converter = new Converter();
+        Operations ops = new Operations(";");
+        string input = "";
+        string output = "";
+        int error = 1;
+        int bitSize;
+
+
         private void OnInputClicked(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -31,30 +39,62 @@ namespace PracticalWorkII
         {
             var button = (Button)sender;
             int operation = GetOperationCode(button.Text);
+            input = InputDisplay.Text;
+
+            string errorMessage = "";
 
             try
             {
-                string result = _converter.PerformConversion(operation, _currentInput);
-                DisplayAlert("Conversion Result", result, "OK");
+                if (!string.IsNullOrWhiteSpace(BitSizeEntry.Text))
+                {
+                    bitSize = Int32.Parse(BitSizeEntry.Text);
+                }
 
-                // Optionally clear input
-                _currentInput = "";
+                output = converter.PerformConversion(operation, input, bitSize);
+                DisplayAlert("Conversion Result", output, "OK");
+
                 InputDisplay.Text = "";
+
+                ops.AddOperation(input, output, operation, error, errorMessage);
+                ops.SaveOperations("output.csv");
+
+                DisplayAlert("Data updated to output.csv", "", "OK");
+            }
+            catch (OverflowException ex)
+            {
+                errorMessage = ex.Message;
+                DisplayAlert("Overflow Error", "Introduce a bit number valid for the input", "OK");
+            }
+            catch (FormatException ex)
+            {
+                errorMessage = ex.Message;
+                DisplayAlert("Format Error", "Introduce a valid input for the conversion chosen", "OK");
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error", $"Conversion failed:\n{ex.Message}", "OK");
+                errorMessage = ex.Message;
+                DisplayAlert("Unknown Error", "An unknown error has occurred", "OK");
             }
+
+            
+
+            
+
+
+
+
+
         }
+
 
         private int GetOperationCode(string buttonText)
         {
             return buttonText switch
             {
                 "Decimal To Binary" => 1,
-                "Decimal to Two Complement" => 2,
-                "Decimal To Octal" => 3,
-                "Decimal To Hexadecimal" => 4,
+                "Decimal to Two Complement" => 4,
+                "Decimal To Octal" => 2,
+                "Decimal To Hexadecimal" => 3,
                 "Binary To Decimal" => 5,
                 "Two Complement To Decimal" => 6,
                 "Octal To Decimal" => 7,
