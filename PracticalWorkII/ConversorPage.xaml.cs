@@ -3,7 +3,7 @@ using Microsoft.Maui.Controls;
 
 namespace PracticalWorkII
 {
-    
+
     public partial class ConversorPage : ContentPage
     {
         public ConversorPage()
@@ -17,6 +17,11 @@ namespace PracticalWorkII
         string output = "";
         int error = 1;
         int bitSize;
+
+        private void OnUserInfoClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UserInfoPage());
+        }
 
 
         private void OnInputClicked(object sender, EventArgs e)
@@ -55,6 +60,8 @@ namespace PracticalWorkII
 
                 InputDisplay.Text = "";
 
+                SessionData.loggedUser.NumOfOperations += 1;
+
                 ops.AddOperation(input, output, operation, error, errorMessage);
                 ops.SaveOperations("output.csv");
 
@@ -76,16 +83,7 @@ namespace PracticalWorkII
                 DisplayAlert("Unknown Error", "An unknown error has occurred", "OK");
             }
 
-            
-
-            
-
-
-
-
-
         }
-
 
         private int GetOperationCode(string buttonText)
         {
@@ -99,9 +97,8 @@ namespace PracticalWorkII
                 "Two Complement To Decimal" => 6,
                 "Octal To Decimal" => 7,
                 "Hexadecimal To Decimal" => 8,
-                _ => throw new InvalidOperationException("Invalid operation text")
             };
         }
+
     }
-    
 }

@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
         string tempUser = UsernameEntry.Text;
         string tempPass = PasswordEntry.Text;
 
-        if (tempUser == SessionData.Username && tempPass == SessionData.Password)
+        if (tempUser == SessionData.loggedUser.Username && tempPass == SessionData.loggedUser.Password)
         {
             DisplayAlert("Success", "Logged in", "OK");
 

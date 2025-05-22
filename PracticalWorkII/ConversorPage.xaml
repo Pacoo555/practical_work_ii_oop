@@ -8,6 +8,11 @@
             Padding="30,0"
             Spacing="25">
 
+            <Button
+                x:Name="UserInfo"
+                Text="User Info"
+                Clicked="OnUserInfoClicked"/>
+
             <Label
                 Text="OOP Conversor"
                 Style="{StaticResource Headline}"
@@ -67,14 +72,14 @@
                 <Button Text="E" Grid.Row="5" Grid.Column="1" Clicked="OnInputClicked"/>
                 <Button Text="F" Grid.Row="5" Grid.Column="2" Clicked="OnInputClicked"/>
 
-                <Button Text="Decimal To Binary" Grid.Row="0" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Decimal to Two Complement" Grid.Row="1" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Decimal To Octal" Grid.Row="2" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Decimal To Hexadecimal" Grid.Row="3" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Binary To Decimal" Grid.Row="4" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Two Complement To Decimal" Grid.Row="5" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Octal To Decimal" Grid.Row="6" Grid.Column="3" Clicked="OnConversionClicked"/>
-                <Button Text="Hexadecimal To Decimal" Grid.Row="7" Grid.Column="3" Clicked="OnConversionClicked"/>
+                <Button Text="Decimal To Binary" Grid.Row="0" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Decimal to Two Complement" Grid.Row="1" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Decimal To Octal" Grid.Row="2" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Decimal To Hexadecimal" Grid.Row="3" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Binary To Decimal" Grid.Row="4" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Two Complement To Decimal" Grid.Row="5" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Octal To Decimal" Grid.Row="6" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
+                <Button Text="Hexadecimal To Decimal" Grid.Row="7" Grid.Column="3" Clicked="OnConversionClicked" BackgroundColor="Lightblue"/>
 
             </Grid>
 

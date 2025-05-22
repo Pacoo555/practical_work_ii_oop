@@ -60,3 +60,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PracticalWorkII.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/Paco/Documents/Uni/OOP/PracticalWorkII/practical_work_ii_oop/PracticalWorkII/UserInfoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PracticalWorkII.UserInfoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = UserInfoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = UserInfoPage.xaml
