@@ -38,7 +38,7 @@ public partial class RegisterPage : ContentPage
             return;
         }
 
-        if (name.Equals(username, StringComparison.OrdinalIgnoreCase))
+        if (name == username)
         {
             DisplayAlert("Error", "Name and username must be different.", "OK");
             return;
@@ -106,6 +106,11 @@ public partial class RegisterPage : ContentPage
     private string Escape(string value)
     {
         return $"\"{value.Replace("\"", "\"\"")}\"";
+    }
+
+    private void GoToPrivacyPolicy(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new PrivacyPolicyPage());
     }
 
 }

@@ -24,6 +24,15 @@
             <Entry x:Name="confirmPasswordEntry"
                 Placeholder="Confirm Password"
                 IsPassword="True" />
+
+            <Label
+                Text="Please accept the privacy policy (Click to see it)">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToPrivacyPolicy"/>
+                </Label.GestureRecognizers>
+            </Label>
+
             
             <CheckBox x:Name="checkBox"
                 IsChecked="False"/>

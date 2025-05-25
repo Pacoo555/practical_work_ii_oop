@@ -4,27 +4,26 @@
              x:Class="PracticalWorkII.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout Padding="30,0" Spacing="25">
 
             <Label
                 Text="OOP Conversor"
-                Style="{StaticResource Headline}"
+                FontSize="32"
+                HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Entry
                 x:Name="UsernameEntry"
-                Placeholder="Username"/>
+                Placeholder="Username" />
 
             <Entry
                 x:Name="PasswordEntry"
-                Placeholder="Password"/>
-                
+                Placeholder="Password"
+                IsPassword="True" />
 
             <Button
                 x:Name="LoginBtn"
-                Text="Login" 
+                Text="Login"
                 Clicked="OnLoginClicked"
                 HorizontalOptions="Fill" />
 
@@ -32,6 +31,15 @@
                 x:Name="RegisterBtn"
                 Text="Sign Up"
                 Clicked="OnGoToRegisterClicked" />
+
+            <Label
+                Text="Forgot password? Click here"
+                TextColor="Blue"
+                FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordClicked" />
+                </Label.GestureRecognizers>
+            </Label>
 
         </VerticalStackLayout>
     </ScrollView>

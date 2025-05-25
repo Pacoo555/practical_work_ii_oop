@@ -24,10 +24,16 @@ public partial class MainPage : ContentPage
             DisplayAlert("Error", "Incorrect user or passwords", "Try again");
         }
     }
-    
+
     private void OnGoToRegisterClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new RegisterPage());
     }
+    
+    private void OnForgotPasswordClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ForgotPasswordPage());
+    }
+
 }
 
